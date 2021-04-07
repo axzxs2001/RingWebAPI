@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System.IO;
 #if UseSwagger
 using Microsoft.OpenApi.Models;
 #endif
@@ -34,11 +35,12 @@ namespace RingWebAPI
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RingWebAPI", Version = "v1" });
+                var filePath = Path.Combine(System.AppContext.BaseDirectory, "RingWebAPI.xml");
+                c.IncludeXmlComments(filePath);
             });
 #endif
         }
 
-     
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

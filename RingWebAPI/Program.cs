@@ -46,7 +46,6 @@ namespace RingWebAPI
                 .UseNLog();  // NLog: Setup NLog for Dependency injection
     }
 #else
-
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
@@ -60,5 +59,4 @@ namespace RingWebAPI
                 });
 #endif
     }
-
 }

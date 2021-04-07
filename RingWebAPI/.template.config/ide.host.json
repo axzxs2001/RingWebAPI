@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json.schemastore.org/vs-2017.3.host",
+  "icon": "icon.png",
+  "symbolInfo": [
+    {
+      "id": "UseNLog",
+      "name": {
+        "text": "Use NLog"
+      },
+      "isVisible": "true"
+    },
+    {
+      "id": "UseDapper",
+      "name": {
+        "text": "Use Dapper"
+      },
+      "isVisible": "true"
+    },
+    {
+      "id": "UseSwagger",
+      "name": {
+        "text": "Use Swagger"
+      },
+      "isVisible": "true"
+    },
+    {
+      "id": "DataBaseType",
+      "isVisible": "true"
+    },
+    {
+      "id": "AuthenticateTyped",
+      "isVisible": "true"
+    }
+  ]
+}

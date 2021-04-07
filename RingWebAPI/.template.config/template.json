@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Gui SuWei",
+  "classifications": [ "Common", "WebAPI", "RingWebAPI" ],
+  "identity": "RingWebAPI",
+  "name": "RingWebAPI",
+  "shortName": "RingWebAPI",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "RingWebAPI",
+  "symbols": {
+    "UseSwagger": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Whether to use Swagger Open API"
+    },
+    "UseNLog": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Whether to uset NLog"
+    },
+    "UseDapper": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Whether to use Dapper"
+    },
+    "AuthenticateType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "NoAuthenticate",
+      "choices": [
+        {
+          "choice": "NoAuthenticate",
+          "description": "NoAuthenticate"
+        },
+        {
+          "choice": "Role",
+          "description": "Role"
+        },
+        {
+          "choice": "Policy",
+          "description": "Policy"
+        }
+      ]
+    },
+    "NoAuthenticate": {
+      "type": "computed",
+      "value": "(AuthenticateType == \"NoAuthenticate\")"
+    },
+    "Role": {
+      "type": "computed",
+      "value": "(AuthenticateType == \"Role\")"
+    },
+    "Policy": {
+      "type": "computed",
+      "value": "(AuthenticateType == \"Policy\")"
+    },
+    "DataBaseType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "NoDataBase",
+      "choices": [
+        {
+          "choice": "NoDataBase",
+          "description": "NoDataBase"
+        },
+        {
+          "choice": "MySql",
+          "description": "MySql"
+        },
+        {
+          "choice": "Postgresql",
+          "description": "Postgresql"
+        },
+        {
+          "choice": "MSSql",
+          "description": "MSSql"
+        }
+      ]
+    },
+    "NoDataBase": {
+      "type": "computed",
+      "value": "(DataBaseType == \"NoDataBase\")"
+    },
+    "MySql": {
+      "type": "computed",
+      "value": "(DataBaseType == \"MySql\")"
+    },
+    "Postgresql": {
+      "type": "computed",
+      "value": "(DataBaseType == \"Postgresql\")"
+    },
+    "MSSql": {
+      "type": "computed",
+      "value": "(DataBaseType == \"MSSql\")"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!UseNLog)",
+          "exclude": [ "NLog.config" ]
+        },
+        {
+          "condition": "(!NoAuthenticate)",
+          "exclude": [ "Permission/JwtToken.cs", "Permission/Permission.cs", "Permission/PermissionHandler.cs", "Permission/PermissionRequirement.cs" ]
+        }
+      ]
+    }
+  ]
+}
