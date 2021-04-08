@@ -108,7 +108,7 @@
           "exclude": [ "NLog.config" ]
         },
         {
-          "condition": "(!NoAuthenticate)",
+          "condition": "(NoAuthenticate)",
           "exclude": [ "Permission/JwtToken.cs", "Permission/Permission.cs", "Permission/PermissionHandler.cs", "Permission/PermissionRequirement.cs" ]
         }
       ]

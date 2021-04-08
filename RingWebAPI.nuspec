@@ -13,6 +13,6 @@
     </packageTypes>
   </metadata>
   <files>
-    <file src="RingWebAPI\**\*.*" exclude="RingWebAPI\**\bin\**\*.*;RingWebAPI\**\obj\**\*.*" target="Content" />
+    <file src="RingWebAPI\**\*.*" exclude="RingWebAPI\**\bin\**\*.*;RingWebAPI\**\obj\**\*.*;RingWebAPI\**\.vs\**\*.*" target="Content" />
   </files>  
 </package>

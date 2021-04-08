@@ -13,10 +13,7 @@ namespace RingWebAPI
     /// </summary>
     public class PermissionRequirement : IAuthorizationRequirement
     {
-        /// <summary>
-        /// 用户权限集合
-        /// </summary>
-        public List<Permission> Permissions { get; private set; }
+
         /// <summary>
         /// 无权限action
         /// </summary>
@@ -56,17 +53,15 @@ namespace RingWebAPI
         /// <summary>
         /// 构造
         /// </summary>
-        /// <param name="deniedAction">拒绝请求的url</param>
-        /// <param name="permissions">权限集合</param>
+        /// <param name="deniedAction">拒绝请求的url</param>      
         /// <param name="claimType">声明类型</param>
         /// <param name="issuer">发行人</param>
         /// <param name="audience">订阅人</param>
         /// <param name="signingCredentials">签名验证实体</param>
-        public PermissionRequirement(string deniedAction, List<Permission> permissions, string claimType, string issuer, string audience, SigningCredentials signingCredentials, TimeSpan expiration)
+        public PermissionRequirement(string deniedAction, string claimType, string issuer, string audience, SigningCredentials signingCredentials, TimeSpan expiration)
         {
             ClaimType = claimType;
-            DeniedAction = deniedAction;
-            Permissions = permissions;
+            DeniedAction = deniedAction;         
             Issuer = issuer;
             Audience = audience;
             Expiration = expiration;
