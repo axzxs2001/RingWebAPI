@@ -109,7 +109,7 @@
         },
         {
           "condition": "(NoAuthenticate)",
-          "exclude": [ "Permission/JwtToken.cs", "Permission/Permission.cs", "Permission/PermissionHandler.cs", "Permission/PermissionRequirement.cs" ]
+          "exclude": [ "ServiceCollectionExtensions.cs", "Models/User.cs", "Models/Audience.cs", "Models/LoginUser.cs", "Services/IUserService.cs", "Services/UserService.cs", "Permission/JwtToken.cs", "Permission/Permission.cs", "Permission/PermissionHandler.cs", "Permission/PermissionRequirement.cs" ]
         }
       ]
     }

@@ -6,10 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+#if UseNLog
+using NLog.Web;
+#endif
 namespace RingWebAPI
-{
-    public class Program
+{    public class Program
     {
 #if UseNLog
         public static void Main(string[] args)
@@ -43,8 +44,7 @@ namespace RingWebAPI
                     logging.ClearProviders();
                     logging.SetMinimumLevel(LogLevel.Trace);
                 })
-                .UseNLog();  // NLog: Setup NLog for Dependency injection
-    }
+                .UseNLog();  // NLog: Setup NLog for Dependency injection    
 #else
         public static void Main(string[] args)
         {
@@ -54,7 +54,7 @@ namespace RingWebAPI
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
-                {                 
+                {
                     webBuilder.UseStartup<Startup>();
                 });
 #endif

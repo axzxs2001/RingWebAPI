@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>RingWebAPI</id>
-    <version>0.0.1</version>
+    <version>0.0.10</version>
     <description>
       RingWebAPI是一个内置了NLog，Dapper，Swagger，授权认证等三方组件的WebAPI项目模板。
     </description>
