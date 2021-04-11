@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
-  <metadata>
-    <id>RingWebAPI</id>
-    <version>0.0.10</version>
-    <description>
-      RingWebAPI是一个内置了NLog，Dapper，Swagger，授权认证等三方组件的WebAPI项目模板。
-    </description>
-    <authors>桂素伟</authors>
-    <license type="expression">MIT</license>
-    <packageTypes>
-      <packageType name="Template" />
-    </packageTypes>
-  </metadata>
-  <files>
-    <file src="RingWebAPI\**\*.*" exclude="RingWebAPI\**\bin\**\*.*;RingWebAPI\**\obj\**\*.*;RingWebAPI\**\.vs\**\*.*" target="Content" />
-  </files>  
+	<metadata>
+		<id>RingWebAPI</id>
+		<title>RingWebAPI</title>
+		<version>0.0.1</version>
+		<projectUrl>https://github.com/axzxs2001/RingWebAPI</projectUrl>
+		<description>
+			RingWebAPI是一个内置了NLog，Dapper，Swagger，授权认证等三方组件的WebAPI项目模板。
+		</description>
+		<authors>桂素伟</authors>
+		<license type="expression">MIT</license>
+		<packageTypes>
+			<packageType name="Template" />
+		</packageTypes>
+		<repository type="git" url="https://github.com/axzxs2001/RingWebAPI.git" branch="main" commit="461e591135a83048420fb059e4b106b701bd54f8" />
+		<icon>images\icon.png</icon>
+	</metadata>
+	<files>
+		<file src="RingWebAPI\**\*.*" exclude="RingWebAPI\**\bin\**\*.*;RingWebAPI\**\obj\**\*.*;RingWebAPI\**\.vs\**\*.*" target="Content" />
+		<file src="..\RingWebAPI\RingWebAPI\.template.config\icon.png" target="images\" />
+	</files>
 </package>
