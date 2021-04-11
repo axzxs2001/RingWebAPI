@@ -74,8 +74,9 @@ namespace RingWebAPI
 #if(Policy)
             //注入授权Handler
             services.AddSingleton<IAuthorizationHandler, PermissionHandler>();
-            services.AddSingleton(permissionRequirement);
 #endif
+            services.AddSingleton(permissionRequirement);
+
         }
     }
 }

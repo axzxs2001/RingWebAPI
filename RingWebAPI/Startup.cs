@@ -34,9 +34,9 @@ namespace RingWebAPI
 #region 这里可以放在缓存中，或从数据库查询,然后注入到容器中
             var permissions = new List<Permission> {
                               new Permission {  Url="/adminapi",  Credentials="admin",Method="GET"},
-                              new Permission {  Url="/adminapi",  Credentials="admin",Method="GET"},
+                              new Permission {  Url="/adminapi",  Credentials="admin",Method="POST"},
                               new Permission {  Url="/systemapi", Credentials="system",Method="GET"},
-                              new Permission {  Url="/systemapi", Credentials="system",Method="GET"}
+                              new Permission {  Url="/systemapi", Credentials="system",Method="POST"}
                           };
             services.AddSingleton(permissions);
 #endregion

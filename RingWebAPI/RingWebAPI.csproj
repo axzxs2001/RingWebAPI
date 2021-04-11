@@ -3,6 +3,7 @@
 		<TargetFramework>net5.0</TargetFramework>
 	</PropertyGroup>
 	<ItemGroup>
+		
 		<!--#if(UseDapper)
         <PackageReference Include="Dapper" Version="2.0.78" />
 	    #endif-->
@@ -20,5 +21,9 @@
 	      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	    </None>
 	  #endif-->		
+	
+	  <None Update="RingWebAPI.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 </Project>

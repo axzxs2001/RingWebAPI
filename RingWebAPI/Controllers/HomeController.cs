@@ -9,23 +9,18 @@ using Microsoft.AspNetCore.Authorization;
 #endif
 namespace RingWebAPI.Controllers
 {
-#if (Policy)
-    [Authorize("Permission")]
-#endif
-#if (Role)
-    [Authorize(Roles ="admin,system")]
-#endif
     [ApiController]
     [Route("[controller]")]
     public class HomeController : ControllerBase
     {
 
         private readonly ILogger<HomeController> _logger;
+#if (NoAuthenticate)
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
-#if (!NoAuthenticate)
+#else
         private readonly IUserService _userService;
         private readonly PermissionRequirement _permissionRequirement;
         public HomeController(ILogger<HomeController> logger, IUserService userService, PermissionRequirement permissionRequirement)
@@ -64,5 +59,48 @@ namespace RingWebAPI.Controllers
             }
         }
 #endif
+
+#if (Policy)
+        [Authorize("Permission")]
+        [HttpGet("/adminapi")]
+        public string GetAdminAPI()
+        {
+            return "get adminapi";
+        }
+        [Authorize("Permission")]
+        [HttpGet("/systemapi")]
+        public string GetSystemAPI()
+        {
+            return "get systemapi";
+        }
+        [Authorize("Permission")]
+        [HttpPost("/adminapi")]
+        public string PostAdminAPI()
+        {
+            return "post adminapi";
+        }
+        [Authorize("Permission")]
+        [HttpPost("/systemapi")]
+        public string PostSystemAPI()
+        {
+            return "post systemapi";
+        }
+#endif
+#if (Role)
+        [Authorize(Roles ="admin")]
+        [HttpGet("/adminapi")]
+        public string GetAdminAPI()
+        {
+            return "get adminapi";
+        }
+        [Authorize(Roles ="system")]
+        [HttpGet("/systemapi")]
+        public string GetSystemAPI()
+        {
+            return "get systemapi";
+        }
+#endif
+
+
     }
 }
