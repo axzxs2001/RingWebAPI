@@ -3,7 +3,7 @@
 	<metadata>
 		<id>RingWebAPI</id>
 		<title>RingWebAPI</title>
-		<version>0.0.1</version>
+		<version>0.0.2</version>
 		<projectUrl>https://github.com/axzxs2001/RingWebAPI</projectUrl>
 		<description>
 			RingWebAPI是一个内置了NLog，Dapper，Swagger，授权认证等三方组件的WebAPI项目模板。

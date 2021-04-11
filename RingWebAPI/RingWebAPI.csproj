@@ -1,14 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
-		<Authors>GuiSuWei</Authors>
-		<PackageProjectUrl>https://github.com/axzxs2001/RingWebAPI</PackageProjectUrl>
-		<PackageIcon>icon.png</PackageIcon>
-		<PackageIconUrl />
-		<RepositoryUrl>https://github.com/axzxs2001/RingWebAPI.git</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
-	<ItemGroup><!--#if(UseDapper)
+	<ItemGroup>
+		<!--#if(UseDapper)
         <PackageReference Include="Dapper" Version="2.0.78" />
 	    #endif-->
 		<!--#if (!NoAuthenticate)
@@ -24,11 +19,6 @@
 	    <None Update="RingWebAPI.xml">
 	      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	    </None>
-	  #endif-->
-	
-	  <None Include=".template.config\icon.png">
-	    <Pack>True</Pack>
-	    <PackagePath></PackagePath>
-	  </None>
+	  #endif-->		
 	</ItemGroup>
 </Project>
